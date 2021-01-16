@@ -21,7 +21,6 @@ public class VideoController {
     public ResponseEntity<ResourceRegion> getVideos(@PathVariable String fileName, @RequestHeader HttpHeaders headers) {
         try {
             UrlResource video = new UrlResource("file:src/main/resources/videos/" + fileName);
-            System.out.println(video.getFile().getAbsolutePath());
             Tika tika = new Tika();
             ResourceRegion region = resourceRegion(video, headers);
 
